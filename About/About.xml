@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Can't You See I'm Busy</name>
+  <author>sum117</author>
+  <packageId>sum117.cantyouseeimbusy</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>
+    Your colonists are soldiers, not toddlers. When a raid hits and they're drafted,
+    Can't You See I'm Busy freezes need decay and blocks mental breaks — so they fight
+    instead of wandering off for a snack. Needs resume exactly where they left off
+    when combat ends. No catch-up penalty. No magic refills.
+  </description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>
