@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Letter notification: mental break blocked during combat -->
+  <CYSIB_MentalBreakBlocked_Label>Focused</CYSIB_MentalBreakBlocked_Label>
+  <CYSIB_MentalBreakBlocked_Text>{0} would have had a mental break, but stayed focused on the fight.</CYSIB_MentalBreakBlocked_Text>
+
+</LanguageData>
