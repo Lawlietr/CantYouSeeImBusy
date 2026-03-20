@@ -15,11 +15,21 @@ namespace CantYouSeeImBusy
         private Dictionary<int, int> _lastLetterTick = new Dictionary<int, int>();
         private const int LetterThrottleTicks = 500;
 
+        private int _reconcileTick = 0;
+        private const int ReconcileInterval = 60; // ~1 second at 1x speed (60 tps)
+
         public CombatStateCache(Map map) : base(map) { }
 
         public override void MapComponentTick()
         {
             InCombat = GenHostility.AnyHostileActiveThreatToPlayer(map);
+
+            _reconcileTick++;
+            if (_reconcileTick >= ReconcileInterval)
+            {
+                _reconcileTick = 0;
+                FocusedHediffManager.Reconcile(map);
+            }
         }
 
         public static CombatStateCache? GetFor(Map map)
