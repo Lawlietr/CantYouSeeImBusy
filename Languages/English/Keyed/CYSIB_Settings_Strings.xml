@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Settings page: global toggle -->
+  <CYSIB_Settings_ModEnabled>Enable Can't You See I'm Busy</CYSIB_Settings_ModEnabled>
+  <CYSIB_Settings_Header>Controls how fast each need decays during combat. 0% = frozen, 100% = normal speed.</CYSIB_Settings_Header>
+  <CYSIB_Settings_Disabled>Mod disabled — all combat effects are inactive.</CYSIB_Settings_Disabled>
+
+  <!-- Settings page: quick-set buttons -->
+  <CYSIB_Settings_FreezeAll>Freeze All</CYSIB_Settings_FreezeAll>
+  <CYSIB_Settings_NormalAll>Normal All</CYSIB_Settings_NormalAll>
+
+  <!-- Settings page: slider status words -->
+  <CYSIB_Settings_StatusFrozen>Frozen</CYSIB_Settings_StatusFrozen>
+  <CYSIB_Settings_StatusSlowed>Slowed</CYSIB_Settings_StatusSlowed>
+  <CYSIB_Settings_StatusNormal>Normal</CYSIB_Settings_StatusNormal>
+
+  <!-- Settings page: slider tooltip. {0} = need label, {1} = percentage integer -->
+  <CYSIB_Settings_SliderTooltip>At {1}%, {0} decays at that speed during combat.</CYSIB_Settings_SliderTooltip>
+
+  <!-- Settings page: reset button -->
+  <CYSIB_Settings_ResetDefaults>Reset to Defaults</CYSIB_Settings_ResetDefaults>
+
+</LanguageData>
