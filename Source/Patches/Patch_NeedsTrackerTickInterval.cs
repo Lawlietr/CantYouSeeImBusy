@@ -74,20 +74,31 @@ namespace CantYouSeeImBusy
         }
 
         /// <summary>
-        /// Postfix: Restores pre-tick need levels using captured object references.
+        /// Postfix: Interpolates between pre-tick and post-tick need levels based on per-need decay rate.
+        /// decayRate=0 -> full freeze (Phase 2 behavior): CurLevel = preTickLevel
+        /// decayRate=0.5 -> half decay: CurLevel = midpoint between pre and post tick
+        /// decayRate=1 -> normal decay (vanilla): CurLevel = postTickLevel
         /// Safe even if the needs list changed between Prefix and Postfix.
         /// </summary>
         public static void Postfix(Pawn_NeedsTracker __instance, (Need need, float level)[]? __state)
         {
             if (__state == null) return;
 
-            // Restore each need's level using the captured reference (not by index)
-            // This is safe even if the needs list changed between Prefix and Postfix
+            // Global toggle: if mod disabled, allow normal decay (no restoration)
+            if (!CantYouSeeImBusyMod.Settings.ModEnabled) return;
+
             for (int i = 0; i < __state.Length; i++)
             {
-                // Guard: if need was removed/despawned between Prefix and Postfix, skip
-                if (__state[i].need != null)
-                    __state[i].need.CurLevel = __state[i].level;
+                if (__state[i].need == null) continue;
+
+                float preTickLevel = __state[i].level;
+                float postTickLevel = __state[i].need.CurLevel;
+                float decayRate = CantYouSeeImBusyMod.Settings.GetDecayRate(__state[i].need.def);
+
+                // decayRate=0 -> full freeze: CurLevel = postTickLevel + (preTickLevel - postTickLevel) * 1.0 = preTickLevel
+                // decayRate=1 -> normal decay: CurLevel = postTickLevel + (preTickLevel - postTickLevel) * 0.0 = postTickLevel
+                // decayRate=0.5 -> half decay: CurLevel = midpoint between pre and post tick levels
+                __state[i].need.CurLevel = postTickLevel + (preTickLevel - postTickLevel) * (1f - decayRate);
             }
         }
     }
