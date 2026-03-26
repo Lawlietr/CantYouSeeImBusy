@@ -21,4 +21,13 @@
   <!-- Settings page: reset button -->
   <CYSIB_Settings_ResetDefaults>重置為預設值</CYSIB_Settings_ResetDefaults>
 
+  <!-- Settings page: protection options -->
+  <CYSIB_Settings_ProtectionOptions>保護選項</CYSIB_Settings_ProtectionOptions>
+  <CYSIB_Settings_BlockBreakdowns>戰鬥期間阻止精神崩潰</CYSIB_Settings_BlockBreakdowns>
+  <CYSIB_Settings_BlockBreakdowns_Tooltip>啟用時，戰鬥中的殖民者將不會有精神崩潰。需求衰減不受此設定影響。</CYSIB_Settings_BlockBreakdowns_Tooltip>
+  <CYSIB_Settings_AllowCubeBreaks>允許立方體塑造崩潰</CYSIB_Settings_AllowCubeBreaks>
+  <CYSIB_Settings_AllowCubeBreaks_Tooltip>啟用時，有立方體成癮的殖民者即使在戰鬥期間且啟用精神崩潰阻斷時，仍然可以進行立方體塑造崩潰。</CYSIB_Settings_AllowCubeBreaks_Tooltip>
+  <CYSIB_Settings_FreezeCaravanNeeds>旅隊組織期間凍結需求</CYSIB_Settings_FreezeCaravanNeeds>
+  <CYSIB_Settings_FreezeCaravanNeeds_Tooltip>啟用時，殖民者在組織旅隊期間需求會被凍結。精神崩潰阻斷（如果啟用）也適用於旅隊組織期間。</CYSIB_Settings_FreezeCaravanNeeds_Tooltip>
+
 </LanguageData>
